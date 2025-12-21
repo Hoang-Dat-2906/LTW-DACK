@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\dack\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|solutionrelative:dack\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\dack\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|solutionrelative:dack\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|c:\\users\\dat\\documents\\github\\ltw-dack\\dack\\dack\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\dack\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|solutionrelative:dack\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|c:\\users\\dat\\documents\\github\\ltw-dack\\dack\\dack\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|solutionrelative:dack\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\dack\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\dack\\views\\products\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|solutionrelative:dack\\views\\products\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\dack\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|solutionrelative:dack\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\dack\\views\\appusers\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -132,9 +132,93 @@
               "RelativeDocumentMoniker": "DACK\\Views\\Products\\Index.cshtml",
               "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Products\\Index.cshtml",
               "RelativeToolTip": "DACK\\Views\\Products\\Index.cshtml",
-              "ViewState": "AgIAACkBAAAAAAAAAAAAAD0BAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAO0AAAAAAAAAAAAAADcBAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-12-16T06:02:03.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\AppUsers\\Register.cshtml",
+              "RelativeDocumentMoniker": "DACK\\Views\\AppUsers\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\AppUsers\\Register.cshtml",
+              "RelativeToolTip": "DACK\\Views\\AppUsers\\Register.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-16T12:25:55.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "DACK\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "DACK\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-21T02:58:06.02Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "quan-short2.jpg",
+              "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\assets\\img\\product\\quan-short2.jpg",
+              "RelativeDocumentMoniker": "DACK\\assets\\img\\product\\quan-short2.jpg",
+              "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\assets\\img\\product\\quan-short2.jpg",
+              "RelativeToolTip": "DACK\\assets\\img\\product\\quan-short2.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-12-21T07:15:48.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "DACK\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "DACK\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwCwAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T05:58:46.041Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ShopThoiTrang.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Models\\ShopThoiTrang.edmx",
+              "RelativeDocumentMoniker": "DACK\\Models\\ShopThoiTrang.edmx",
+              "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Models\\ShopThoiTrang.edmx [Diagram1]",
+              "RelativeToolTip": "DACK\\Models\\ShopThoiTrang.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-12-21T06:58:35.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Products\\Details.cshtml",
+              "RelativeDocumentMoniker": "DACK\\Views\\Products\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Products\\Details.cshtml",
+              "RelativeToolTip": "DACK\\Views\\Products\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-21T08:24:27.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "DACK\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "DACK\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAPwBAAAAAAAAAAAwwAECAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-16T05:59:12.466Z",
               "EditorCaption": ""
             },
             {
@@ -151,78 +235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\AppUsers\\Register.cshtml",
-              "RelativeDocumentMoniker": "DACK\\Views\\AppUsers\\Register.cshtml",
-              "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\AppUsers\\Register.cshtml",
-              "RelativeToolTip": "DACK\\Views\\AppUsers\\Register.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-16T12:25:55.079Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "DACK\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "DACK\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-21T02:58:06.02Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "quan-short2.jpg",
-              "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\assets\\img\\product\\quan-short2.jpg",
-              "RelativeDocumentMoniker": "DACK\\assets\\img\\product\\quan-short2.jpg",
-              "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\assets\\img\\product\\quan-short2.jpg",
-              "RelativeToolTip": "DACK\\assets\\img\\product\\quan-short2.jpg",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2025-12-21T07:15:48.051Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "DACK\\Controllers\\ProductsController.cs",
-              "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "DACK\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAwCwAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T05:58:46.041Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ShopThoiTrang.edmx [Diagram1]",
-              "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Models\\ShopThoiTrang.edmx",
-              "RelativeDocumentMoniker": "DACK\\Models\\ShopThoiTrang.edmx",
-              "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Models\\ShopThoiTrang.edmx [Diagram1]",
-              "RelativeToolTip": "DACK\\Models\\ShopThoiTrang.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2025-12-21T06:58:35.727Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Products\\Details.cshtml",
-              "RelativeDocumentMoniker": "DACK\\Views\\Products\\Details.cshtml",
-              "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Products\\Details.cshtml",
-              "RelativeToolTip": "DACK\\Views\\Products\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-21T08:24:27.9Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Products\\Delete.cshtml",
               "RelativeDocumentMoniker": "DACK\\Views\\Products\\Delete.cshtml",
@@ -234,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "quan-short-desc1.jpg",
               "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\assets\\img\\product\\quan-short-desc1.jpg",
               "RelativeDocumentMoniker": "DACK\\assets\\img\\product\\quan-short-desc1.jpg",
@@ -246,18 +259,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "DACK\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "DACK\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAALcBAAAAAAAAAAAwwMwBAABYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-16T05:59:12.466Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Products\\Edit.cshtml",
               "RelativeDocumentMoniker": "DACK\\Views\\Products\\Edit.cshtml",
