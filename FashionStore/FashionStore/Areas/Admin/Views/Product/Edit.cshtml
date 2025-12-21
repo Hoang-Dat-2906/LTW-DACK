@@ -48,7 +48,9 @@
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label">Danh mục</label>
-                            @Html.ListBoxFor(m => m.SelectedCategoryIds, (MultiSelectList)ViewBag.Categories, new { @class = "form-select", style = "height: 150px;" })
+                            @* Đổi ép kiểu thành SelectList và dùng DropDownListFor thay vì MultiSelectList *@
+                            @Html.DropDownListFor(m => m.CategoryId, (SelectList)ViewBag.Categories, "-- Chọn danh mục --", new { @class = "form-select" })
+                            @Html.ValidationMessageFor(m => m.CategoryId, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="mb-3">

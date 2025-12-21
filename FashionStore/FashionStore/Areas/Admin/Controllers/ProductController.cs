@@ -48,7 +48,7 @@ namespace FashionStore.Areas.Admin.Controllers
         public ActionResult Create()
         {
             // Load danh sách Category để chọn (Single Select)
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CatName");
+            ViewBag.Categories = new SelectList(db.Categories, "CategoryId", "CategoryName");
             return View();
         }
 
@@ -69,7 +69,7 @@ namespace FashionStore.Areas.Admin.Controllers
                     IsActive = model.IsActive,
                     CreatedAt = DateTime.Now,
                     Slug = string.IsNullOrEmpty(model.Slug) ? GenerateSlug(model.ProductName) : model.Slug,
-                    CategoryId = model. CategoryId// Gán CategoryId
+                    CategoryId = model.CategoryId// Gán CategoryId
                 };
 
                 db.Products.Add(product);
@@ -101,7 +101,7 @@ namespace FashionStore.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CatName", model.CategoryId);
+            ViewBag.Categories = new SelectList(db.Categories, "CategoryId", "CategoryName", model.CategoryId);
             return View(model);
         }
 
@@ -129,7 +129,7 @@ namespace FashionStore.Areas.Admin.Controllers
                 CategoryId = product.CategoryId
             };
 
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CatName", model.CategoryId);
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryName", model.CategoryId);
             return View(model);
         }
 
@@ -189,7 +189,7 @@ namespace FashionStore.Areas.Admin.Controllers
                     return RedirectToAction("Index");
                 }
             }
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CatName", model.CategoryId);
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryName", model.CategoryId);
             return View(model);
         }
 
