@@ -1,0 +1,109 @@
+﻿@model DACK.Models.CartItem
+
+@{
+    ViewBag.Title = "Add to Cart";
+}
+
+<section class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__text">
+                    <h4>Shopping Cart</h4>
+                    <div class="breadcrumb__links">
+                        <a href="@Url.Action("Index", "Home")">Home</a>
+                        <a href="@Url.Action("Index")">Cart</a>
+                        <span>Add Item</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="checkout spad">
+    <div class="container">
+        <div class="checkout__form">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+                        <h6 class="checkout__title">Item Details</h6>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Select Cart<span>*</span></p>
+                                    @Html.DropDownList("CartId", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.CartId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Product Variant<span>*</span></p>
+                                    @Html.DropDownList("VariantId", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.VariantId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Quantity<span>*</span></p>
+                                    @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control", placeholder = "1" } })
+                                    @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Unit Price<span>*</span></p>
+                                    @Html.EditorFor(model => model.UnitPrice, new { htmlAttributes = new { @class = "form-control", placeholder = "0.00" } })
+                                    @Html.ValidationMessageFor(model => model.UnitPrice, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-lg-12">
+                                <button type="submit" class="site-btn">ADD TO CART</button>
+                                <a href="@Url.Action("Index")" class="btn btn-outline-secondary ml-3" style="padding: 14px 30px; border-radius: 0; font-weight: 800; letter-spacing: 2px;">BACK TO LIST</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+@section Scripts {
+    <style>
+        /* Tùy chỉnh để khớp với Male Fashion Style */
+        .checkout__input p {
+            color: #111111;
+            margin-bottom: 12px;
+        }
+
+        .checkout__input input, .checkout__input select {
+            height: 50px;
+            width: 100%;
+            border: 1px solid #e1e1e1;
+            font-size: 14px;
+            color: #b7b7b7;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            border-radius: 0;
+        }
+
+            .checkout__input input:focus {
+                border-color: #111111;
+                color: #111111;
+            }
+
+        .site-btn {
+            background: #111111;
+            padding: 14px 30px;
+        }
+    </style>
+}

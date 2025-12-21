@@ -1,0 +1,111 @@
+﻿@model IEnumerable<DACK.Models.CartItem>
+
+@{
+    DACK.Models.ShopThoiTrangEntities db = new DACK.Models.ShopThoiTrangEntities();
+    ViewBag.Title = "Shopping Cart";
+
+}
+
+<section class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__text">
+                    <h4>Shopping Cart</h4>
+                    <div class="breadcrumb__links">
+                        <a href="@Url.Action("Index", "Home")">Home</a>
+                        <a href="@Url.Action("Index", "Products")">Shop</a>
+                        <span>Shopping Cart</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="shopping-cart spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="shopping__cart__table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                var product = item.ProductVariant.Product;
+                                var image = db.ProductImage
+                            .FirstOrDefault(i => i.ProductId == product.ProductId && i.IsPrimary);
+
+
+                                <tr>
+                                    <td class="product__cart__item">
+                                        <div class="product__cart__item__pic">
+                                            <img src= "~/assets/img/product/@image" alt="@product.ProductName" style="width:90px;height:90px;object-fit:cover;" />
+                                        </div>
+                                        <div class="product__cart__item__text">
+                                            <h6>@product.ProductName</h6>
+                                            <h5>@String.Format("{0:N0} đ", item.UnitPrice)</h5>
+                                            <small>Size: @item.ProductVariant.Size.SizeCode | Color: @item.ProductVariant.Color.ColorName</small>
+                                        </div>
+                                    </td>
+                                    <td class="quantity__item">
+                                        <div class="quantity">
+                                            <div class="pro-qty-2">
+                                                <input type="text" value="@item.Quantity" readonly />
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="cart__price">@String.Format("{0:N0} đ", item.UnitPrice * item.Quantity)</td>
+                                    <td class="cart__close">
+                                        <a href="@Url.Action("RemoveFromCart", "Cart", new { cartItemId = item.CartItemId })">
+                                            <i class="fa fa-close"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="continue__btn">
+                            <a href="@Url.Action("Index", "Products")">Continue Shopping</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="cart__discount">
+                    <h6>Discount codes</h6>
+                    @using (Html.BeginForm("", "", FormMethod.Post))
+                    {
+                    <input type="text" placeholder="Coupon code">
+                    <button type="submit">Apply</button>
+                    }
+                </div>
+                <div class="cart__total">
+                    <h6>Cart total</h6>
+                    <ul>
+                        <li>Subtotal <span>@String.Format("{0:N0} đ", Model.Sum(i => i.UnitPrice * i.Quantity))</span></li>
+                        <li>Total <span>@String.Format("{0:N0} đ", Model.Sum(i => i.UnitPrice * i.Quantity))</span></li>
+                    </ul>
+                    <a href="@Url.Action("Checkout", "Orders")" class="primary-btn">Proceed to checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section scripts {
+    <script>
+        // Nếu template Male Fashion có file main.js, nút tăng giảm số lượng sẽ tự hoạt động.
+        // Bạn có thể thêm Ajax tại đây để cập nhật số lượng khi người dùng nhấn tăng/giảm.
+    </script>
+}
