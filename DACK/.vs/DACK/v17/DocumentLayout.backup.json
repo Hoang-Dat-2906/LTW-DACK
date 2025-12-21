@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|c:\\users\\dat\\documents\\github\\ltw-dack\\dack\\dack\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|solutionrelative:dack\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\dack\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|solutionrelative:dack\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|c:\\users\\dat\\documents\\github\\ltw-dack\\dack\\dack\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|solutionrelative:dack\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\dack\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,7 +31,7 @@
       "RelativeMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|solutionrelative:dack\\assets\\img\\product\\quan-short2.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|c:\\users\\dat\\documents\\github\\ltw-dack\\dack\\dack\\assets\\img\\product\\quan-short-desc1.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "AbsoluteMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\dack\\assets\\img\\product\\quan-short-desc1.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
       "RelativeMoniker": "D:0:0:{69611057-EB8E-4B85-BC70-DD795AAF1B4F}|DACK\\DACK.csproj|solutionrelative:dack\\assets\\img\\product\\quan-short-desc1.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
     },
     {
@@ -114,7 +114,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -126,13 +126,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Products\\Index.cshtml",
               "RelativeDocumentMoniker": "DACK\\Views\\Products\\Index.cshtml",
               "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Products\\Index.cshtml",
               "RelativeToolTip": "DACK\\Views\\Products\\Index.cshtml",
-              "ViewState": "AgIAACkBAAAAAAAAAAAAADwBAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAACkBAAAAAAAAAAAAAD0BAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-12-16T06:02:03.462Z",
               "EditorCaption": ""
@@ -171,8 +171,7 @@
               "RelativeToolTip": "DACK\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-21T02:58:06.02Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-21T02:58:06.02Z"
             },
             {
               "$type": "Document",
@@ -183,8 +182,7 @@
               "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\assets\\img\\product\\quan-short2.jpg",
               "RelativeToolTip": "DACK\\assets\\img\\product\\quan-short2.jpg",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2025-12-21T07:15:48.051Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-21T07:15:48.051Z"
             },
             {
               "$type": "Document",
@@ -196,8 +194,7 @@
               "RelativeToolTip": "DACK\\Controllers\\ProductsController.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAAwCwAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T05:58:46.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-16T05:58:46.041Z"
             },
             {
               "$type": "Document",
@@ -208,18 +205,17 @@
               "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Models\\ShopThoiTrang.edmx [Diagram1]",
               "RelativeToolTip": "DACK\\Models\\ShopThoiTrang.edmx [Diagram1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2025-12-21T06:58:35.727Z",
-              "EditorCaption": " [Diagram1]"
+              "WhenOpened": "2025-12-21T06:58:35.727Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Products\\Details.cshtml",
               "RelativeDocumentMoniker": "DACK\\Views\\Products\\Details.cshtml",
               "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\Views\\Products\\Details.cshtml",
               "RelativeToolTip": "DACK\\Views\\Products\\Details.cshtml",
-              "ViewState": "AgIAAEQBAAAAAAAAAAAwwF0BAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-12-21T08:24:27.9Z",
               "EditorCaption": ""
@@ -234,8 +230,7 @@
               "RelativeToolTip": "DACK\\Views\\Products\\Delete.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-21T08:41:46.184Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-21T08:41:46.184Z"
             },
             {
               "$type": "Document",
@@ -246,8 +241,7 @@
               "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\DACK\\DACK\\assets\\img\\product\\quan-short-desc1.jpg",
               "RelativeToolTip": "DACK\\assets\\img\\product\\quan-short-desc1.jpg",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2025-12-21T16:12:25.72Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-21T16:12:25.72Z"
             },
             {
               "$type": "Document",
@@ -271,8 +265,7 @@
               "RelativeToolTip": "DACK\\Views\\Products\\Edit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-21T08:35:55.286Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-21T08:35:55.286Z"
             },
             {
               "$type": "Document",
