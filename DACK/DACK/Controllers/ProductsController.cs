@@ -26,12 +26,27 @@ namespace DACK.Controllers
         // GET: Products/Details/5
         public ActionResult Details(int? id)
         {
-            var product = db.Product
-               .Include(p => p.ProductImage)
-               .FirstOrDefault(p => p.ProductId == id);
+            var product = db.Product.Find(id);
+            if (product == null) return HttpNotFound();
 
-            if (product == null)
-                return HttpNotFound();
+            // Lấy list đánh giá
+            var reviews = (from r in db.ProductReview
+                           join oi in db.OrderItem on r.OrderItemId equals oi.OrderItemId
+                           join pv in db.ProductVariant on oi.VariantId equals pv.VariantId // <--- Thêm dòng này để Join bảng Variant
+                           join o in db.Order on oi.OrderId equals o.OrderId
+
+                           where pv.ProductId == id // <--- Sửa điều kiện lọc tại đây (dùng pv thay vì oi.ProductVariant)
+                           select new
+                           {
+                               FullName = o.CustomerName,
+                               Rating = r.Rating,
+                               Comment = r.Comment,
+                               CreatedAt = r.CreatedAt,
+                               SizeName = oi.SizeName,
+                               ColorName = oi.ColorName
+                           }).OrderByDescending(x => x.CreatedAt).ToList();
+
+            ViewBag.Reviews = reviews;
 
             return View(product);
         }

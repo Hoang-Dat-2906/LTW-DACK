@@ -52,6 +52,7 @@
     <Property Name="IsActive" Type="Boolean" />
     <NavigationProperty Name="Product" Relationship="Self.FK__Product__Categor__5812160E" FromRole="Category" ToRole="Product" />
     <NavigationProperty Name="CategoryGroup" Relationship="Self.FK_Category_Group" FromRole="Category" ToRole="CategoryGroup" />
+    <NavigationProperty Name="Product1" Relationship="ShopThoiTrangModel.ProductCategory" FromRole="Category" ToRole="Product" />
   </EntityType>
   <EntityType Name="CategoryGroup">
     <Key>
@@ -135,6 +136,7 @@
     <NavigationProperty Name="Category" Relationship="Self.FK__Product__Categor__5812160E" FromRole="Product" ToRole="Category" />
     <NavigationProperty Name="ProductImage" Relationship="Self.FK_ProductImage_Product" FromRole="Product" ToRole="ProductImage" />
     <NavigationProperty Name="ProductVariant" Relationship="Self.FK_Variant_Product" FromRole="Product" ToRole="ProductVariant" />
+    <NavigationProperty Name="Category1" Relationship="ShopThoiTrangModel.ProductCategory" FromRole="Product" ToRole="Category" />
   </EntityType>
   <EntityType Name="ProductImage">
     <Key>
@@ -424,5 +426,13 @@
       <End Role="Role" EntitySet="Role" />
       <End Role="AppUser" EntitySet="AppUser" />
     </AssociationSet>
+    <AssociationSet Name="ProductCategory" Association="ShopThoiTrangModel.ProductCategory">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="ProductCategory">
+    <End Type="ShopThoiTrangModel.Category" Role="Category" Multiplicity="*" />
+    <End Type="ShopThoiTrangModel.Product" Role="Product" Multiplicity="*" />
+  </Association>
 </Schema>

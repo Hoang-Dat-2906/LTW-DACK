@@ -3,7 +3,79 @@
 @{
     ViewData["Title"] = Model.ProductName;
 }
+<style>
+    .detail-img-box {
+        width: 120px;
+        height: 120px;
+        border: 1px solid #ddd;
+        overflow: hidden;
+        border-radius: 6px;
+    }
+    /* ===== PRODUCT DETAIL GALLERY ===== */
 
+    .product-detail-gallery {
+        display: flex;
+        gap: 12px;
+        flex-wrap: nowrap;
+    }
+
+    .detail-img-box {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        overflow: hidden;
+        cursor: pointer;
+        background: #fff;
+    }
+
+        .detail-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .detail-img-box:hover {
+            border-color: #000;
+            transform: scale(1.05);
+            transition: all 0.2s ease;
+        }
+    /* Tab Header Styling */
+    .nav-tabs .nav-link {
+        color: #111;
+        font-weight: 600;
+        text-transform: uppercase;
+        border: none;
+    }
+
+        .nav-tabs .nav-link.active {
+            color: #ca1515 !important;
+            border-bottom: 2px solid #ca1515;
+        }
+
+    /* Review Item Styling */
+    .review-item {
+        border-radius: 8px;
+        transition: transform 0.2s;
+    }
+
+        .review-item:hover {
+            border-color: #ca1515 !important;
+        }
+
+    .admin-reply {
+        border-radius: 0 4px 4px 0;
+    }
+
+    .text-warning .fa-star {
+        color: #f39c12;
+    }
+
+    .text-warning .fa-star-o {
+        color: #ccc;
+    }
+</style>
 
 <section class="shop-details spad">
     <div class="container">
@@ -12,22 +84,38 @@
             <!-- LEFT: IMAGE -->
             <div class="col-lg-6">
                 @{
-                    var mainImage = Model.ProductImage
-                        .FirstOrDefault(x => x.IsPrimary)
-                        ?? Model.ProductImage.FirstOrDefault();
+                    var allImages = Model.ProductImage
+                        .OrderByDescending(x => x.IsPrimary) // main lên đầu
+                        .ThenBy(x => x.SortOrder)
+                        .ToList();
+
+                    var mainImage = allImages.FirstOrDefault();
                 }
 
-                <img class="img-fluid mb-3"
+
+                <img id="mainImage"
+                     class="img-fluid mb-3"
                      src="~/assets/img/product/@mainImage.ImageUrl"
                      alt="@Model.ProductName" />
 
-                <div class="d-flex gap-2">
-                    @foreach (var img in Model.ProductImage)
-                    {
-                        <img src="~/assets/img/product/@img.ImageUrl"
-                             style="width:80px;height:80px;object-fit:cover;border:1px solid #ddd;" />
-                    }
-                </div>
+
+                @if (allImages.Any())
+                {
+                    <div class="product-detail-gallery mt-3">
+                        @foreach (var img in allImages)
+                        {
+                            var isActive = img.ImageUrl == mainImage.ImageUrl;
+
+                            <div class="detail-img-box @(isActive ? "active" : "")">
+                                <img src="~/assets/img/product/@img.ImageUrl"
+                                     alt="@Model.ProductName" />
+                            </div>
+                        }
+                    </div>
+                }
+
+
+
             </div>
 
             <!-- RIGHT: INFO -->
@@ -67,7 +155,7 @@
                         <input type="text"
                                name="Message"
                                class="form-control"
-                               placeholder="Chúc mừng sinh nhật..." />
+                               placeholder="Ghi chú cho bài người bán" />
                     </div>
 
                     <!-- BUTTON -->
@@ -105,41 +193,21 @@
                         <div class="tab-pane active" id="tabs-5" role="tabpanel">
                             <div class="product__details__tab__content">
                                 <p class="note">
-                                    Nam tempus turpis at metus scelerisque placerat nulla deumantos
-                                    solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis
-                                    ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo
-                                    pharetras loremos.
+                                    
                                 </p>
                                 <div class="product__details__tab__content__item">
-                                    <h5>Products Infomation</h5>
+                                    <h5>Giới thiệu sản phẩm</h5>
                                     <p>
-                                        A Pocket PC is a handheld computer, which features many of the same
-                                        capabilities as a modern PC. These handy little devices allow
-                                        individuals to retrieve and store e-mail messages, create a contact
-                                        file, coordinate appointments, surf the internet, exchange text messages
-                                        and more. Every product that is labeled as a Pocket PC must be
-                                        accompanied with specific software to operate the unit and must feature
-                                        a touchscreen and touchpad.
+                                        Chiếc quần short jean này là sự lựa chọn hoàn hảo cho những chàng trai yêu thích phong cách năng động và phóng khoáng. Với thiết kế hiện đại, form dáng vừa vặn giúp tôn lên vẻ ngoài trẻ trung nhưng vẫn đảm bảo sự thoải mái tuyệt đối cho người mặc trong mọi hoạt động hàng ngày. Điểm nhấn của sản phẩm nằm ở những đường wash màu tinh tế cùng đường kim mũi chỉ chắc chắn, mang đến một vẻ đẹp bụi bặm nhưng không kém phần chỉn chu. Dù là kết hợp cùng áo thun đơn giản để dạo phố hay phối cùng sơ mi cho những buổi gặp gỡ bạn bè, chiếc quần này vẫn giúp bạn khẳng định gu thời trang cá tính và hiện đại của mình.
                                     </p>
                                     <p>
-                                        As is the case with any new technology product, the cost of a Pocket PC
-                                        was substantial during it’s early release. For approximately $700.00,
-                                        consumers could purchase one of top-of-the-line Pocket PCs in 2003.
-                                        These days, customers are finding that prices have become much more
-                                        reasonable now that the newness is wearing off. For approximately
-                                        $350.00, a new Pocket PC can now be purchased.
+                                        Sản phẩm được chế tác từ dòng vải Denim cao cấp với sự kết hợp hoàn hảo giữa sợi Cotton tự nhiên và sợi co giãn Spandex. Chất liệu Cotton giúp bề mặt vải có độ bền cao, khả năng thấm hút mồ hôi cực tốt và cực kỳ thoáng mát, phù hợp với khí hậu nóng ẩm. Việc pha thêm sợi co giãn giúp chiếc quần có độ đàn hồi linh hoạt, không gây cảm giác gò bó khi vận động mạnh hay ngồi lâu. Đặc biệt, vải đã trải qua quy trình xử lý công nghệ cao giúp bề mặt mềm mại hơn, hạn chế tối đa tình trạng nhăn nhúm hay phai màu sau nhiều lần giặt, giữ cho sản phẩm luôn trông như mới.
                                     </p>
                                 </div>
                                 <div class="product__details__tab__content__item">
-                                    <h5>Material used</h5>
+                                    <h5>Chất liệu sử dụng</h5>
                                     <p>
-                                        Polyester is deemed lower quality due to its none natural quality’s. Made
-                                        from synthetic materials, not natural like wool. Polyester suits become
-                                        creased easily and are known for not being breathable. Polyester suits
-                                        tend to have a shine to them compared to wool and cotton suits, this can
-                                        make the suit look cheap. The texture of velvet is luxurious and
-                                        breathable. Velvet is a great choice for dinner party jacket and can be
-                                        worn all year round.
+                                        Sản phẩm được chế tác từ dòng vải Denim cao cấp với sự kết hợp hoàn hảo giữa sợi Cotton tự nhiên và sợi co giãn Spandex. Chất liệu Cotton giúp bề mặt vải có độ bền cao, khả năng thấm hút mồ hôi cực tốt và cực kỳ thoáng mát, phù hợp với khí hậu nóng ẩm. Việc pha thêm sợi co giãn giúp chiếc quần có độ đàn hồi linh hoạt, không gây cảm giác gò bó khi vận động mạnh hay ngồi lâu. Đặc biệt, vải đã trải qua quy trình xử lý công nghệ cao giúp bề mặt mềm mại hơn, hạn chế tối đa tình trạng nhăn nhúm hay phai màu sau nhiều lần giặt, giữ cho sản phẩm luôn trông như mới.
                                     </p>
                                 </div>
                             </div>
@@ -147,40 +215,56 @@
                         <div class="tab-pane" id="tabs-6" role="tabpanel">
                             <div class="product__details__tab__content">
                                 <div class="product__details__tab__content__item">
-                                    <h5>Products Infomation</h5>
-                                    <p>
-                                        A Pocket PC is a handheld computer, which features many of the same
-                                        capabilities as a modern PC. These handy little devices allow
-                                        individuals to retrieve and store e-mail messages, create a contact
-                                        file, coordinate appointments, surf the internet, exchange text messages
-                                        and more. Every product that is labeled as a Pocket PC must be
-                                        accompanied with specific software to operate the unit and must feature
-                                        a touchscreen and touchpad.
-                                    </p>
-                                    <p>
-                                        As is the case with any new technology product, the cost of a Pocket PC
-                                        was substantial during it’s early release. For approximately $700.00,
-                                        consumers could purchase one of top-of-the-line Pocket PCs in 2003.
-                                        These days, customers are finding that prices have become much more
-                                        reasonable now that the newness is wearing off. For approximately
-                                        $350.00, a new Pocket PC can now be purchased.
-                                    </p>
-                                </div>
-                                <div class="product__details__tab__content__item">
-                                    <h5>Material used</h5>
-                                    <p>
-                                        Polyester is deemed lower quality due to its none natural quality’s. Made
-                                        from synthetic materials, not natural like wool. Polyester suits become
-                                        creased easily and are known for not being breathable. Polyester suits
-                                        tend to have a shine to them compared to wool and cotton suits, this can
-                                        make the suit look cheap. The texture of velvet is luxurious and
-                                        breathable. Velvet is a great choice for dinner party jacket and can be
-                                        worn all year round.
-                                    </p>
+                                    <h4 class="fw-bold mb-4 text-uppercase">Khách hàng nhận xét</h4>
+
+                                    @if (ViewBag.Reviews != null && ((IEnumerable<dynamic>)ViewBag.Reviews).Any())
+                                    {
+                                        foreach (var rev in ViewBag.Reviews)
+                                        {
+                                            <div class="review-item mb-4 p-3 bg-light rounded shadow-sm border">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <span class="fw-bold text-dark">@rev.FullName</span>
+                                                        <span class="text-muted ms-2" style="font-size: 12px;">
+                                                            <i class="fa fa-calendar"></i> @rev.CreatedAt.ToString("dd/MM/yyyy")
+                                                        </span>
+                                                    </div>
+                                                    <div class="text-warning">
+                                                        @for (int i = 1; i <= 5; i++)
+                                                        {
+                                                            <i class="fa @(i <= rev.Rating ? "fa-star" : "fa-star-o")"></i>
+                                                        }
+                                                    </div>
+                                                </div>
+
+                                                <div class="mt-2 text-secondary" style="font-size: 13px;">
+                                                    Phân loại: <strong>Size @rev.SizeName, Màu @rev.ColorName</strong>
+                                                </div>
+
+                                                <p class="mt-2 mb-0 text-dark" style="font-style: italic;">"@rev.Comment"</p>
+
+                                                <div class="admin-reply mt-3 p-3 bg-white border-start border-4 border-warning shadow-sm">
+                                                    <span class="fw-bold text-warning" style="font-size: 13px;">
+                                                        <i class="fa fa-user-circle"></i> Đội ngũ hỗ trợ phản hồi:
+                                                    </span>
+                                                    <p class="mb-0 mt-1 text-muted" style="font-size: 14px;">
+                                                        Chào @rev.FullName, cảm ơn bạn đã tin tưởng lựa chọn sản phẩm của shop. Chúc bạn có những trải nghiệm tuyệt vời nhất!
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <div class="text-center py-5">
+                                            <i class="fa fa-comments-o fa-3x text-muted mb-3"></i>
+                                            <p class="text-muted">Sản phẩm này chưa có đánh giá nào. Hãy là người đầu tiên mua và nhận xét!</p>
+                                        </div>
+                                    }
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -188,6 +272,21 @@
 
     </div>
 </section>
+
+
+<script>
+    document.querySelectorAll('.detail-img-box img').forEach(img => {
+        img.addEventListener('click', function () {
+            const mainImg = document.getElementById('mainImage');
+            mainImg.src = this.src;
+
+            document.querySelectorAll('.detail-img-box')
+                .forEach(box => box.classList.remove('active'));
+
+            this.parentElement.classList.add('active');
+        });
+    });
+</script>
 
 @*<h2>Details</h2>
 

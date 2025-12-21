@@ -34,6 +34,7 @@
         <AssociationConnector Association="ShopThoiTrangModel.FK_Variant_Product" ManuallyRouted="false" />
         <AssociationConnector Association="ShopThoiTrangModel.FK_Variant_Size" ManuallyRouted="false" />
         <AssociationConnector Association="ShopThoiTrangModel.UserRole" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopThoiTrangModel.ProductCategory" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

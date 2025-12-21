@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ShopThoiTrangModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ShopThoiTrangModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AppUser">
           <Key>
             <PropertyRef Name="UserId" />
@@ -121,6 +121,14 @@
           <Property Name="CreatedAt" Type="datetime2" Precision="7" />
           <Property Name="CategoryId" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="ProductCategory">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="ProductImage">
           <Key>
             <PropertyRef Name="ImageId" />
@@ -222,6 +230,30 @@
             </Principal>
             <Dependent Role="Product">
               <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductCa__Categ__17036CC0">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="ProductCategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductCa__Produ__160F4887">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductCategory">
+              <PropertyRef Name="ProductId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -368,6 +400,7 @@
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderItem" EntityType="Self.OrderItem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductImage" EntityType="Self.ProductImage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductReview" EntityType="Self.ProductReview" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductVariant" EntityType="Self.ProductVariant" Schema="dbo" store:Type="Tables" />
@@ -389,6 +422,14 @@
           <AssociationSet Name="FK__Product__Categor__5812160E" Association="Self.FK__Product__Categor__5812160E">
             <End Role="Category" EntitySet="Category" />
             <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductCa__Categ__17036CC0" Association="Self.FK__ProductCa__Categ__17036CC0">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="ProductCategory" EntitySet="ProductCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductCa__Produ__160F4887" Association="Self.FK__ProductCa__Produ__160F4887">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductCategory" EntitySet="ProductCategory" />
           </AssociationSet>
           <AssociationSet Name="FK__UserRole__Rid__06CD04F7" Association="Self.FK__UserRole__Rid__06CD04F7">
             <End Role="Role" EntitySet="Role" />
@@ -435,8 +476,7 @@
             <End Role="ProductVariant" EntitySet="ProductVariant" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ShopThoiTrangModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -492,6 +532,7 @@
           <Property Name="IsActive" Type="Boolean" />
           <NavigationProperty Name="Product" Relationship="Self.FK__Product__Categor__5812160E" FromRole="Category" ToRole="Product" />
           <NavigationProperty Name="CategoryGroup" Relationship="Self.FK_Category_Group" FromRole="Category" ToRole="CategoryGroup" />
+          <NavigationProperty Name="Product1" Relationship="ShopThoiTrangModel.ProductCategory" FromRole="Category" ToRole="Product" />
         </EntityType>
         <EntityType Name="CategoryGroup">
           <Key>
@@ -575,6 +616,7 @@
           <NavigationProperty Name="Category" Relationship="Self.FK__Product__Categor__5812160E" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="ProductImage" Relationship="Self.FK_ProductImage_Product" FromRole="Product" ToRole="ProductImage" />
           <NavigationProperty Name="ProductVariant" Relationship="Self.FK_Variant_Product" FromRole="Product" ToRole="ProductVariant" />
+          <NavigationProperty Name="Category1" Relationship="ShopThoiTrangModel.ProductCategory" FromRole="Product" ToRole="Category" />
         </EntityType>
         <EntityType Name="ProductImage">
           <Key>
@@ -864,7 +906,15 @@
             <End Role="Role" EntitySet="Role" />
             <End Role="AppUser" EntitySet="AppUser" />
           </AssociationSet>
+          <AssociationSet Name="ProductCategory" Association="ShopThoiTrangModel.ProductCategory">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="ProductCategory">
+          <End Type="ShopThoiTrangModel.Category" Role="Category" Multiplicity="*" />
+          <End Type="ShopThoiTrangModel.Product" Role="Product" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1056,6 +1106,14 @@
             </EndProperty>
             <EndProperty Name="AppUser">
               <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ProductCategory" TypeName="ShopThoiTrangModel.ProductCategory" StoreEntitySet="ProductCategory">
+            <EndProperty Name="Product">
+              <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+            </EndProperty>
+            <EndProperty Name="Category">
+              <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
             </EndProperty>
           </AssociationSetMapping>
         </EntityContainerMapping>
