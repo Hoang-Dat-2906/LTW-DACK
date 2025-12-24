@@ -130,6 +130,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AppUsersController.cs" />
+    <Compile Include="Controllers\BlogsController.cs" />
     <Compile Include="Controllers\CartItemsController.cs" />
     <Compile Include="Controllers\CartsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -139,6 +140,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AppUser.cs">
+      <DependentUpon>ShopThoiTrang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Blogs.cs">
       <DependentUpon>ShopThoiTrang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Cart.cs">
@@ -154,6 +158,9 @@
       <DependentUpon>ShopThoiTrang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Color.cs">
+      <DependentUpon>ShopThoiTrang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContactMessages.cs">
       <DependentUpon>ShopThoiTrang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CustomerAddress.cs">
@@ -456,6 +463,11 @@
     <Content Include="Views\ProductReviews\Details.cshtml" />
     <Content Include="Views\ProductReviews\Edit.cshtml" />
     <Content Include="Views\ProductReviews\Index.cshtml" />
+    <Content Include="Views\Blogs\Create.cshtml" />
+    <Content Include="Views\Blogs\Delete.cshtml" />
+    <Content Include="Views\Blogs\Details.cshtml" />
+    <Content Include="Views\Blogs\Edit.cshtml" />
+    <Content Include="Views\Blogs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -35,6 +35,8 @@
         <AssociationConnector Association="ShopThoiTrangModel.FK_Variant_Size" ManuallyRouted="false" />
         <AssociationConnector Association="ShopThoiTrangModel.UserRole" ManuallyRouted="false" />
         <AssociationConnector Association="ShopThoiTrangModel.ProductCategory" />
+        <EntityTypeShape EntityType="ShopThoiTrangModel.ContactMessages" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ShopThoiTrangModel.Blogs" Width="1.5" PointX="3.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

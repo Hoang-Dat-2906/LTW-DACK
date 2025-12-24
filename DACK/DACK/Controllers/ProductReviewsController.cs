@@ -14,14 +14,13 @@ namespace DACK.Controllers
     {
         private ShopThoiTrangEntities1 db = new ShopThoiTrangEntities1();
 
-        // GET: ProductReviews
+        
         public ActionResult Index()
         {
             var productReview = db.ProductReview.Include(p => p.OrderItem);
             return View(productReview.ToList());
         }
 
-        // GET: ProductReviews/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -75,7 +74,6 @@ namespace DACK.Controllers
                 db.ProductReview.Add(review);
                 db.SaveChanges();
 
-                // Tìm ProductId để quay về trang chi tiết
                 var productId = (from oi in db.OrderItem
                                  join pv in db.ProductVariant on oi.VariantId equals pv.VariantId
                                  where oi.OrderItemId == review.OrderItemId
@@ -86,7 +84,6 @@ namespace DACK.Controllers
             return View(review);
         }
 
-        // GET: ProductReviews/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)

@@ -40,5 +40,7 @@ namespace DACK.Models
         public virtual DbSet<ProductVariant> ProductVariant { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Size> Size { get; set; }
+        public virtual DbSet<ContactMessages> ContactMessages { get; set; }
+        public virtual DbSet<Blogs> Blogs { get; set; }
     }
 }

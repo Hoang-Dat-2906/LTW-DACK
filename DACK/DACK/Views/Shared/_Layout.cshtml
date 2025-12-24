@@ -522,24 +522,24 @@
                                         <div class="col-lg-4">
                                             <h6 style="font-weight: bold; margin-bottom: 10px;">Phụ kiện chính</h6>
                                             <ul>
-                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 4 })">Nón</a></li>
-                                                <li><a href="#">Balo</a></li>
-                                                <li><a href="#">Giày</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 4, searchString = "lưỡi chai" })">Nón lưỡi chai</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 8 })">Balo</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 10 })">Giày</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-lg-4">
                                             <h6 style="font-weight: bold; margin-bottom: 10px;">Phụ kiện khác</h6>
                                             <ul>
-                                                <li><a href="#">Túi đeo</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 4,searchString = "bèo" })">Nón bèo</a></li>
                                                 <li><a href="@Url.Action("Index", "Products", new { categoryId = 5 })">Vớ</a></li>
-                                                <li><a href="#">Đồ thể thao</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { searchString = "Đồ thể thao" })">Đồ thể thao</li>
                                             </ul>
                                         </div>
                                         <div class="col-lg-4">
                                             <h6 style="font-weight: bold; margin-bottom: 10px;">Khuyến mãi</h6>
                                             <ul>
-                                                <li><a href="#">Giảm giá 50%</a></li>
-                                                <li><a href="#">Hàng mới về</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 9 })">Túi đeo</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { searchString = "collap" })">Collaps</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -548,8 +548,8 @@
                             </li>
 
                             <li><a href="@Url.Action("About", "Home")">Giới thiệu</a></li>
-                            <li><a href="./blog.html">Tin tức</a></li>
-                            <li><a href="./contact.html">Liên hệ</a></li>
+                            <li><a href="@Url.Action("Index", "Blogs")">Tin tức</a></li>
+                            <li><a href="@Url.Action("Contact", "Home")">Liên hệ</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -657,6 +657,26 @@
             </form>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Lấy đường dẫn URL hiện tại
+            var currentPath = window.location.pathname;
+
+            // Xóa class active ở tất cả các menu item
+            document.querySelectorAll('.header__menu ul li').forEach(li => {
+                li.classList.remove('active');
+            });
+
+            // Tìm thẻ a có href khớp với URL và thêm active vào thẻ li cha
+            document.querySelectorAll('.header__menu ul li a').forEach(a => {
+                if (a.getAttribute('href') === currentPath) {
+                    a.parentElement.classList.add('active');
+                }
+            });
+        });
+    </script>
+
     <!-- Search End -->
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>

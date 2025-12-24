@@ -12,6 +12,19 @@
     <Property Name="IsActive" Type="bit" Nullable="false" />
     <Property Name="CreatedAt" Type="datetime2" Precision="0" Nullable="false" />
   </EntityType>
+  <EntityType Name="Blogs">
+    <Key>
+      <PropertyRef Name="BlogId" />
+    </Key>
+    <Property Name="BlogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="ImageThumb" Type="varchar" MaxLength="250" />
+    <Property Name="ShortDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FullContent" Type="nvarchar(max)" />
+    <Property Name="Author" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
   <EntityType Name="Cart">
     <Key>
       <PropertyRef Name="CartId" />
@@ -60,6 +73,17 @@
     <Property Name="ColorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ColorHex" Type="varchar" MaxLength="30" />
     <Property Name="ColorName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ContactMessages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="MessageText" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="IsRead" Type="bit" />
   </EntityType>
   <EntityType Name="CustomerAddress">
     <Key>
@@ -386,11 +410,13 @@
   </Association>
   <EntityContainer Name="ShopThoiTrangModelStoreContainer">
     <EntitySet Name="AppUser" EntityType="Self.AppUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Blogs" EntityType="Self.Blogs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CartItem" EntityType="Self.CartItem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CategoryGroup" EntityType="Self.CategoryGroup" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Color" EntityType="Self.Color" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContactMessages" EntityType="Self.ContactMessages" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CustomerAddress" EntityType="Self.CustomerAddress" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OrderItem" EntityType="Self.OrderItem" Schema="dbo" store:Type="Tables" />

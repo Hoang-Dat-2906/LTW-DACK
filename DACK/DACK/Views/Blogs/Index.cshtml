@@ -1,0 +1,132 @@
+﻿@model IEnumerable<DACK.Models.Blogs>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    /* Khoảng cách cho phần sản phẩm liên quan */
+    .product__item__text {
+        padding: 20px 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important; /* Tạo khoảng cách đều giữa các phần tử */
+    }
+
+    /* Đưa nút Add to cart lên trên và đẩy tên xuống */
+    .add-cart {
+        order: 1 !important;
+        margin-bottom: 10px !important;
+        font-weight: bold;
+        color: #e53637 !important; /* Màu đỏ của template */
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .product__item__text h6 {
+        order: 2 !important;
+        margin: 0 !important;
+    }
+
+    .product__item__text h5 {
+        order: 3 !important;
+        font-weight: 700;
+    }
+</style>
+
+<section class="blog spad">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic"
+                             style="background-image: url('/assets/img/blog/@item.ImageThumb');
+                                background-size: cover;
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                height: 270px;
+                                width: 100%;
+                                display: block;">
+                        </div>
+                        <div class="blog__item__text">
+                            <span>
+                                <img src="~/assets/img/icon/calendar.png">
+                                @(item.CreatedAt.HasValue ? item.CreatedAt.Value.ToString("dd MMMM yyyy") : "")
+                            </span>
+                            <h5>@item.Title</h5>
+                            <p>@item.ShortDescription</p>
+                            @* Đường dẫn tới trang chi tiết *@
+                            <a href="@Url.Action("Details", "Blogs", new { id = item.BlogId })">Xem thêm</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+@*<h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageThumb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullContent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageThumb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullContent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.BlogId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.BlogId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.BlogId })
+            </td>
+        </tr>
+    }
+
+    </table>*@

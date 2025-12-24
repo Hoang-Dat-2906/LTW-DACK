@@ -20,19 +20,14 @@ namespace DACK.Controllers
         {
             var products = db.Product.Include(p => p.ProductImage).Where(p => p.IsActive == true);
 
-            // Nếu nhấn vào chữ "Áo" chung chung
             if (categoryGroup == "ao")
             {
-                // Lấy tất cả Category liên quan đến Áo (1, 2, 3)
                 products = products.Where(p => p.CategoryId == 1 || p.CategoryId == 2 || p.CategoryId == 3);
             }
-            // Nếu nhấn vào từng loại cụ thể (Áo thun, Sơ mi...)
             else if (categoryId.HasValue)
             {
                 products = products.Where(p => p.CategoryId == categoryId.Value);
             }
-
-            // Tìm kiếm theo từ khóa (nếu có)
             if (!string.IsNullOrEmpty(searchString))
             {
                 products = products.Where(p => p.ProductName.Contains(searchString));
@@ -40,12 +35,18 @@ namespace DACK.Controllers
 
             return View(products.ToList());
         }
-        // GET: Products/Details/5
         public ActionResult Details(int? id)
         {
             var product = db.Product.Find(id);
             if (product == null)
                 return HttpNotFound();
+
+            var relatedProducts = db.Product
+                .Where(p => p.CategoryId == product.CategoryId && p.ProductId != id && p.IsActive == true)
+                .Take(4)
+                .ToList();
+
+            ViewBag.RelatedProducts = relatedProducts;
 
             var reviews = (
                 from r in db.ProductReview
@@ -72,7 +73,6 @@ namespace DACK.Controllers
 
         public ActionResult Ao()
         {
-            // Lọc các sản phẩm có CategoryId là 1 (Thun), 2 (Sơ mi), 3 (Khoác)
             var listAo = db.Product.Include(p => p.ProductImage)
                                    .Where(p => (p.CategoryId == 1 || p.CategoryId == 2 || p.CategoryId == 3)
                                                 && p.IsActive == true)

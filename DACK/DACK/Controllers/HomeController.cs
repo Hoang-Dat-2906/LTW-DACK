@@ -12,7 +12,6 @@ namespace DACK.Controllers
         private ShopThoiTrangEntities1 db = new ShopThoiTrangEntities1();
         public ActionResult Index()
         {
-            // Thêm .Include(p => p.ProductImage) để lấy danh sách hình ảnh
             var products = db.Product.Include(p => p.ProductImage).ToList();
             return View(products);
         }
@@ -29,6 +28,29 @@ namespace DACK.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        [HttpPost]
+        public ActionResult SendContact(string FullName, string Email, string MessageText)
+        {
+            try
+            {
+                var contact = new ContactMessages();
+                contact.FullName = FullName;
+                contact.Email = Email;
+                contact.MessageText = MessageText;
+                contact.CreatedAt = DateTime.Now;
+                contact.IsRead = false;
+
+                db.ContactMessages.Add(contact);
+                db.SaveChanges(); 
+
+                TempData["Message"] = "Gửi thành công!";
+                return RedirectToAction("Contact");
+            }
+            catch (Exception ex)
+            {
+                return Content("Lỗi: " + ex.Message);
+            }
         }
     }
 }
