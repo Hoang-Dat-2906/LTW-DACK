@@ -1,9 +1,131 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<main aria-labelledby="title">
-    <h2 id="title">@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
 
-    <p>Use this area to provide additional information.</p>
-</main>
+<section class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__text">
+                    <h4>Giới thiệu</h4>
+                    <div class="breadcrumb__links">
+                        <a href="@Url.Action("Index", "Home")">Trang chủ</a>
+                        <span>Về chúng tôi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="about__pic">
+                    <img src="~/assets/img/about/about-us.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="about__item">
+                    <h4>Chúng tôi là ai ?</h4>
+                    <p>Một thương hiệu thời trang cung cấp các nhu yếu phẩm sang trọng. Được chế tác đạo đức với cam kết kiên định về chất lượng đặc biệt.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="about__item">
+                    <h4>Khách hàng nói gì ?</h4>
+                    <p>Khách hàng luôn tin tưởng vào chất lượng vải và phong cách thiết kế hiện đại, phù hợp với xu hướng thế giới của chúng tôi.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="about__item">
+                    <h4>Mục tiêu tương lai</h4>
+                    <p>Trở thành chuỗi cửa hàng thời trang hàng đầu Việt Nam, mang đến trải nghiệm mua sắm tuyệt vời nhất cho giới trẻ.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="counter spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="counter__item">
+                    <div class="counter__item__number">
+                        <h2 class="cn_num">102</h2>
+                    </div>
+                    <span>Khách hàng <br />Hài lòng</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="counter__item">
+                    <div class="counter__item__number">
+                        <h2 class="cn_num">30</h2>
+                    </div>
+                    <span>Danh mục <br />Sản phẩm</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="counter__item">
+                    <div class="counter__item__number">
+                        <h2 class="cn_num">12</h2>
+                    </div>
+                    <span>Chi nhánh <br />Toàn quốc</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="counter__item">
+                    <div class="counter__item__number">
+                        <h2 class="cn_num">98</h2>
+                        <strong>%</strong>
+                    </div>
+                    <span>Phản hồi <br />Tích cực</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="team spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Đội ngũ của chúng tôi</span>
+                    <h2>Gặp gỡ những người sáng lập</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team__item">
+                    <img src="~/assets/img/about/team-1.jpg" alt="">
+                    <h4>John Smith</h4>
+                    <span>Thời trang nam</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team__item">
+                    <img src="~/assets/img/about/team-2.jpg" alt="">
+                    <h4>Christine Wise</h4>
+                    <span>CEO - Founder</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team__item">
+                    <img src="~/assets/img/about/team-3.jpg" alt="">
+                    <h4>Sean Robbins</h4>
+                    <span>Quản lý kho</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team__item">
+                    <img src="~/assets/img/about/team-4.jpg" alt="">
+                    <h4>Lucy Anthony</h4>
+                    <span>Thiết kế đồ họa</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -166,7 +166,7 @@
             </div>
         </div>
 
-        <!-- DESCRIPTION -->
+        <!-- Giới thiệu/ Đánh giá sản phẩm của khách hàng -->
         <div class="row mt-5">
             <div class="col-lg-12">
                 <h5 class="fw-bold">Mô tả</h5>
@@ -180,12 +180,12 @@
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" data-toggle="tab" href="#tabs-5"
-                               role="tab">Description</a>
+                               role="tab">Giới thiệu sản phẩm</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#tabs-6" role="tab">
-                                Customer
-                                Previews(5)
+                                Đánh giá (@(ViewBag.Reviews != null ? ViewBag.Reviews.Count : 0))
+
                             </a>
                         </li>
                     </ul>
@@ -193,7 +193,7 @@
                         <div class="tab-pane active" id="tabs-5" role="tabpanel">
                             <div class="product__details__tab__content">
                                 <p class="note">
-                                    
+
                                 </p>
                                 <div class="product__details__tab__content__item">
                                     <h5>Giới thiệu sản phẩm</h5>
@@ -215,18 +215,19 @@
                         <div class="tab-pane" id="tabs-6" role="tabpanel">
                             <div class="product__details__tab__content">
                                 <div class="product__details__tab__content__item">
-                                    <h4 class="fw-bold mb-4 text-uppercase">Khách hàng nhận xét</h4>
+                                    <h4 class="fw-bold mb-4 text-uppercase"></h4>
 
-                                    @if (ViewBag.Reviews != null && ((IEnumerable<dynamic>)ViewBag.Reviews).Any())
+                                    @if (ViewBag.Reviews != null)
                                     {
                                         foreach (var rev in ViewBag.Reviews)
                                         {
                                             <div class="review-item mb-4 p-3 bg-light rounded shadow-sm border">
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <div>
+                                                        @* Dùng tên thuộc tính chính xác từ Select trong Controller *@
                                                         <span class="fw-bold text-dark">@rev.FullName</span>
                                                         <span class="text-muted ms-2" style="font-size: 12px;">
-                                                            <i class="fa fa-calendar"></i> @rev.CreatedAt.ToString("dd/MM/yyyy")
+                                                            @rev.CreatedAt.ToString("dd/MM/yyyy")
                                                         </span>
                                                     </div>
                                                     <div class="text-warning">
@@ -236,20 +237,9 @@
                                                         }
                                                     </div>
                                                 </div>
-
-                                                <div class="mt-2 text-secondary" style="font-size: 13px;">
+                                                <p class="mt-2 mb-1 text-secondary">@rev.Comment</p>
+                                                <div class="text-muted small">
                                                     Phân loại: <strong>Size @rev.SizeName, Màu @rev.ColorName</strong>
-                                                </div>
-
-                                                <p class="mt-2 mb-0 text-dark" style="font-style: italic;">"@rev.Comment"</p>
-
-                                                <div class="admin-reply mt-3 p-3 bg-white border-start border-4 border-warning shadow-sm">
-                                                    <span class="fw-bold text-warning" style="font-size: 13px;">
-                                                        <i class="fa fa-user-circle"></i> Đội ngũ hỗ trợ phản hồi:
-                                                    </span>
-                                                    <p class="mb-0 mt-1 text-muted" style="font-size: 14px;">
-                                                        Chào @rev.FullName, cảm ơn bạn đã tin tưởng lựa chọn sản phẩm của shop. Chúc bạn có những trải nghiệm tuyệt vời nhất!
-                                                    </p>
                                                 </div>
                                             </div>
                                         }
@@ -261,6 +251,35 @@
                                             <p class="text-muted">Sản phẩm này chưa có đánh giá nào. Hãy là người đầu tiên mua và nhận xét!</p>
                                         </div>
                                     }
+
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h4 class="fw-bold text-uppercase mb-0">Khách hàng nhận xét</h4>
+
+                                    @if (TempData["ReviewMessage"] != null)
+                                    {
+                                        <div class="alert alert-@TempData["MessageType"] alert-dismissible fade show" role="alert">
+                                            <strong><i class="fa fa-info-circle"></i></strong> @TempData["ReviewMessage"]
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    }
+
+                                    @if (Session["User"] != null)
+                                    {
+                                        @* Sửa "ProductReview" thành "ProductReviews" (phải khớp với tên File Controller của bạn) *@
+                                        <a href="@Url.Action("Create", "ProductReviews", new { productId = Model.ProductId })"
+                                           class="btn btn-danger btn-sm">
+                                            <i class="fa fa-pencil"></i> Viết đánh giá
+                                        </a>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="@Url.Action("Login", "AppUsers", new { returnUrl = Request.RawUrl })"
+                                           class="btn btn-outline-secondary btn-sm">
+                                            đăng nhập Viết đánh giá
+                                        </a>
+                                    }
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -269,6 +288,9 @@
                 </div>
             </div>
         </div>
+
+    
+
 
     </div>
 </section>

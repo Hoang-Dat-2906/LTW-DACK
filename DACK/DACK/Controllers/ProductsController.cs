@@ -14,44 +14,71 @@ namespace DACK.Controllers
 {
     public class ProductsController : Controller
     {
-        private ShopThoiTrangEntities1 db = new ShopThoiTrangEntities1();       
-        // GET: Products
-        public ActionResult Index()
+        private ShopThoiTrangEntities1 db = new ShopThoiTrangEntities1();
+
+        public ActionResult Index(string searchString, int? categoryId, string categoryGroup)
         {
-            var products = db.Product.ToList();
+            var products = db.Product.Include(p => p.ProductImage).Where(p => p.IsActive == true);
 
-            return View(products);
+            // Nếu nhấn vào chữ "Áo" chung chung
+            if (categoryGroup == "ao")
+            {
+                // Lấy tất cả Category liên quan đến Áo (1, 2, 3)
+                products = products.Where(p => p.CategoryId == 1 || p.CategoryId == 2 || p.CategoryId == 3);
+            }
+            // Nếu nhấn vào từng loại cụ thể (Áo thun, Sơ mi...)
+            else if (categoryId.HasValue)
+            {
+                products = products.Where(p => p.CategoryId == categoryId.Value);
+            }
+
+            // Tìm kiếm theo từ khóa (nếu có)
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                products = products.Where(p => p.ProductName.Contains(searchString));
+            }
+
+            return View(products.ToList());
         }
-
         // GET: Products/Details/5
         public ActionResult Details(int? id)
         {
             var product = db.Product.Find(id);
-            if (product == null) return HttpNotFound();
+            if (product == null)
+                return HttpNotFound();
 
-            // Lấy list đánh giá
-            var reviews = (from r in db.ProductReview
-                           join oi in db.OrderItem on r.OrderItemId equals oi.OrderItemId
-                           join pv in db.ProductVariant on oi.VariantId equals pv.VariantId // <--- Thêm dòng này để Join bảng Variant
-                           join o in db.Order on oi.OrderId equals o.OrderId
-
-                           where pv.ProductId == id // <--- Sửa điều kiện lọc tại đây (dùng pv thay vì oi.ProductVariant)
-                           select new
-                           {
-                               FullName = o.CustomerName,
-                               Rating = r.Rating,
-                               Comment = r.Comment,
-                               CreatedAt = r.CreatedAt,
-                               SizeName = oi.SizeName,
-                               ColorName = oi.ColorName
-                           }).OrderByDescending(x => x.CreatedAt).ToList();
+            var reviews = (
+                from r in db.ProductReview
+                join oi in db.OrderItem on r.OrderItemId equals oi.OrderItemId
+                join pv in db.ProductVariant on oi.VariantId equals pv.VariantId
+                join o in db.Order on oi.OrderId equals o.OrderId
+                where pv.ProductId == id
+                orderby r.CreatedAt descending
+                select new ReviewViewModel
+                {
+                    FullName = o.CustomerName,  
+                    Rating = r.Rating,
+                    Comment = r.Comment,
+                    CreatedAt = r.CreatedAt,
+                    SizeName = oi.SizeName,
+                    ColorName = oi.ColorName
+                }
+            ).ToList();
 
             ViewBag.Reviews = reviews;
 
             return View(product);
         }
 
-
+        public ActionResult Ao()
+        {
+            // Lọc các sản phẩm có CategoryId là 1 (Thun), 2 (Sơ mi), 3 (Khoác)
+            var listAo = db.Product.Include(p => p.ProductImage)
+                                   .Where(p => (p.CategoryId == 1 || p.CategoryId == 2 || p.CategoryId == 3)
+                                                && p.IsActive == true)
+                                   .ToList();
+            return View(listAo);
+        }
 
         // GET: Products/Create
         public ActionResult Create()

@@ -449,34 +449,34 @@
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Trang chủ</a></li>
+                            <li class="active"><a href="@Url.Action("Index", "Home")">Trang chủ</a></li>
 
                             <li>
-                                <a href="#">Phụ Kiện <span class="arrow_carrot-down"></span></a>
+                                <a href="@Url.Action("Index", "Products",  new { categoryGroup = "ao" } )">Áo <span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown" style="width: 600px; padding: 20px;">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <h6 style="font-weight: bold; margin-bottom: 10px;">Áo Thun</h6>
                                             <ul>
-                                                <li><a href="#">Áo Thun Cổ Tròn</a></li>
-                                                <li><a href="#">Áo Polo</a></li>
-                                                <li><a href="#">Áo Thun Tay Dài</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 1, searchString = "Cổ Tròn" })">Áo Thun Cổ Tròn</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 1, searchString = "Polo" })">Áo Polo</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 1, searchString = "thể thao"})">Áo Thun Thể thao</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-lg-4">
                                             <h6 style="font-weight: bold; margin-bottom: 10px;">Áo Sơ Mi</h6>
                                             <ul>
-                                                <li><a href="#">Áo Sơ Mi Tay Ngắn</a></li>
-                                                <li><a href="#">Áo Sơ Mi Tay Dài</a></li>
-                                                <li><a href="#">Áo Sơ Mi Khoác</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 2 })">Áo Sơ Mi</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 2 ,  searchString = "tay dài"})">Áo Sơ Mi Tay Dài</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 2 ,  searchString = "khoác"})">Áo Sơ Mi Khoác</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-lg-4">
                                             <h6 style="font-weight: bold; margin-bottom: 10px;">Áo Khoác</h6>
                                             <ul>
-                                                <li><a href="#">Áo Khoác Kaki</a></li>
-                                                <li><a href="#">Áo Khoác Bomber</a></li>
-                                                <li><a href="#">Áo Khoác Hoodie</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 3, searchString ="Kaki" })">Áo Khoác Kaki</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 3, searchString ="Bomber" })">Áo Khoác Bomber</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 3, searchString ="Hoodie" })">Áo Khoác Hoodie</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -490,25 +490,25 @@
                                         <div class="col-lg-4">
                                             <h6 style="font-weight: bold; margin-bottom: 10px;">Quần Short</h6>
                                             <ul>
-                                                <li><a href="#">Quần Short Thun</a></li>
-                                                <li><a href="#">Quần Short Kaki</a></li>
-                                                <li><a href="#">Quần Short Dù</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 6,searchString = "short thun" })">Quần Short Thun</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 6,searchString = "kaki" })">Quần Short Kaki</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 6,searchString = "dù" })">Quần Short Dù</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-lg-4">
                                             <h6 style="font-weight: bold; margin-bottom: 10px;">Quần Dài</h6>
                                             <ul>
-                                                <li><a href="#">Quần Tây</a></li>
-                                                <li><a href="#">Quần Jogger</a></li>
-                                                <li><a href="#">Quần Kaki</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 7,searchString = "tây" })">Quần Tây</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 7,searchString = "jogger" })">Quần Jogger</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 7,searchString = "kaki" })">Quần Kaki</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-lg-4">
                                             <h6 style="font-weight: bold; margin-bottom: 10px;">Quần Jeans</h6>
                                             <ul>
-                                                <li><a href="#">Jeans Slim Fit</a></li>
-                                                <li><a href="#">Jeans Loose Fit</a></li>
-                                                <li><a href="#">Jeans Regular</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 7,searchString = "slim" })">Jeans Slim Fit</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 7,searchString = "fit" })">Jeans Loose Fit</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 7,searchString = "regular" })">Jeans Regular</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -522,7 +522,7 @@
                                         <div class="col-lg-4">
                                             <h6 style="font-weight: bold; margin-bottom: 10px;">Phụ kiện chính</h6>
                                             <ul>
-                                                <li><a href="#">Nón</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 4 })">Nón</a></li>
                                                 <li><a href="#">Balo</a></li>
                                                 <li><a href="#">Giày</a></li>
                                             </ul>
@@ -531,7 +531,7 @@
                                             <h6 style="font-weight: bold; margin-bottom: 10px;">Phụ kiện khác</h6>
                                             <ul>
                                                 <li><a href="#">Túi đeo</a></li>
-                                                <li><a href="#">Vớ</a></li>
+                                                <li><a href="@Url.Action("Index", "Products", new { categoryId = 5 })">Vớ</a></li>
                                                 <li><a href="#">Đồ thể thao</a></li>
                                             </ul>
                                         </div>
@@ -547,7 +547,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="./about.html">Giới thiệu</a></li>
+                            <li><a href="@Url.Action("About", "Home")">Giới thiệu</a></li>
                             <li><a href="./blog.html">Tin tức</a></li>
                             <li><a href="./contact.html">Liên hệ</a></li>
                         </ul>

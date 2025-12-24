@@ -1,16 +1,20 @@
-﻿using System;
+﻿using DACK.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Data.Entity;
 namespace DACK.Controllers
 {
     public class HomeController : Controller
     {
+        private ShopThoiTrangEntities1 db = new ShopThoiTrangEntities1();
         public ActionResult Index()
         {
-            return View();
+            // Thêm .Include(p => p.ProductImage) để lấy danh sách hình ảnh
+            var products = db.Product.Include(p => p.ProductImage).ToList();
+            return View(products);
         }
 
         public ActionResult About()

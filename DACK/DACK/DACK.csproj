@@ -133,6 +133,7 @@
     <Compile Include="Controllers\CartItemsController.cs" />
     <Compile Include="Controllers\CartsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductReviewsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -176,6 +177,7 @@
     <Compile Include="Models\ProductVariant.cs">
       <DependentUpon>ShopThoiTrang.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ReviewViewModel.cs" />
     <Compile Include="Models\Role.cs">
       <DependentUpon>ShopThoiTrang.tt</DependentUpon>
     </Compile>
@@ -263,6 +265,15 @@
     <Content Include="assets\img\logo.png" />
     <Content Include="assets\img\payment.png" />
     <Content Include="assets\img\product-sale.png" />
+    <Content Include="assets\img\product\ao-thun1.jpg" />
+    <Content Include="assets\img\product\ao-thun2.jpg" />
+    <Content Include="assets\img\product\ao-thun3.jpg" />
+    <Content Include="assets\img\product\khoac1.jpg" />
+    <Content Include="assets\img\product\khoac2.jpg" />
+    <Content Include="assets\img\product\khoac3.jpg" />
+    <Content Include="assets\img\product\non1.jpg" />
+    <Content Include="assets\img\product\non2.jpg" />
+    <Content Include="assets\img\product\non3.jpg" />
     <Content Include="assets\img\product\product-1.jpg" />
     <Content Include="assets\img\product\product-10.jpg" />
     <Content Include="assets\img\product\product-11.jpg" />
@@ -277,8 +288,19 @@
     <Content Include="assets\img\product\product-7.jpg" />
     <Content Include="assets\img\product\product-8.jpg" />
     <Content Include="assets\img\product\product-9.jpg" />
+    <Content Include="assets\img\product\quan-dai1.jpg" />
+    <Content Include="assets\img\product\quan-dai2.jpg" />
+    <Content Include="assets\img\product\quan-dai3.jpg" />
     <Content Include="assets\img\product\quan-short-desc1.jpg" />
+    <Content Include="assets\img\product\quan-short1.jpg" />
     <Content Include="assets\img\product\quan-short2.jpg" />
+    <Content Include="assets\img\product\quan-short3.jpg" />
+    <Content Include="assets\img\product\so-mi1.jpg" />
+    <Content Include="assets\img\product\so-mi2.jpg" />
+    <Content Include="assets\img\product\so-mi3.jpg" />
+    <Content Include="assets\img\product\vo1.jpg" />
+    <Content Include="assets\img\product\vo2.jpg" />
+    <Content Include="assets\img\product\vo3.jpg" />
     <Content Include="assets\img\shop-details\details-payment.png" />
     <Content Include="assets\img\shop-details\product-big-2.png" />
     <Content Include="assets\img\shop-details\product-big-3.png" />
@@ -377,26 +399,6 @@
     <Content Include="assets\sass\_shop.scss" />
     <Content Include="assets\sass\_shopping-cart.scss" />
     <Content Include="assets\sass\_variable.scss" />
-    <Content Include="assets\img\product\ao-thun1.webp" />
-    <Content Include="assets\img\product\ao-thun2.webp" />
-    <Content Include="assets\img\product\ao-thun3.webp" />
-    <Content Include="assets\img\product\khoac1.webp" />
-    <Content Include="assets\img\product\khoac2.webp" />
-    <Content Include="assets\img\product\khoac3.webp" />
-    <Content Include="assets\img\product\non1.webp" />
-    <Content Include="assets\img\product\non2.webp" />
-    <Content Include="assets\img\product\non3.webp" />
-    <Content Include="assets\img\product\quan-dai1.webp" />
-    <Content Include="assets\img\product\quan-dai2.webp" />
-    <Content Include="assets\img\product\quan-dai3.webp" />
-    <Content Include="assets\img\product\quan-short1.webp" />
-    <Content Include="assets\img\product\quan-short3.webp" />
-    <Content Include="assets\img\product\so-mi1.webp" />
-    <Content Include="assets\img\product\so-mi2.webp" />
-    <Content Include="assets\img\product\so-mi3.webp" />
-    <Content Include="assets\img\product\vo1.webp" />
-    <Content Include="assets\img\product\vo2.webp" />
-    <Content Include="assets\img\product\vo3.webp" />
     <EntityDeploy Include="Models\ShopThoiTrang.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ShopThoiTrang.Designer.cs</LastGenOutput>
@@ -449,6 +451,11 @@
     <Content Include="Views\Carts\Details.cshtml" />
     <Content Include="Views\Carts\Edit.cshtml" />
     <Content Include="Views\Carts\Index.cshtml" />
+    <Content Include="Views\ProductReviews\Create.cshtml" />
+    <Content Include="Views\ProductReviews\Delete.cshtml" />
+    <Content Include="Views\ProductReviews\Details.cshtml" />
+    <Content Include="Views\ProductReviews\Edit.cshtml" />
+    <Content Include="Views\ProductReviews\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

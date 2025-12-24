@@ -1,0 +1,45 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\FashionStore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0C8DB3F8-715B-458F-B94C-2623FBFFA035}|FashionStore\\FashionStore.csproj|c:\\users\\dat\\documents\\github\\ltw-dack\\fashionstore\\fashionstore\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C8DB3F8-715B-458F-B94C-2623FBFFA035}|FashionStore\\FashionStore.csproj|solutionrelative:fashionstore\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\FashionStore\\FashionStore\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "FashionStore\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Dat\\Documents\\GitHub\\LTW-DACK\\FashionStore\\FashionStore\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "FashionStore\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-24T05:24:31.16Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
