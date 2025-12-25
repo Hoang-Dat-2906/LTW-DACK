@@ -23,10 +23,24 @@
                             <div class="col-lg-6 col-md-6 text-right">
                                 <div class="shop__product__option__right">
                                     <p>Sắp xếp theo giá:</p>
-                                    <select onchange="location = this.value;" style="padding: 5px 10px; border: 1/2px solid #ebebeb;">
-                                        <option value="@Url.Action("Index", "Products")">Mặc định</option>
-                                        <option value="@Url.Action("Index", "Products", new { sortOrder = "price_asc" })">Giá thấp đến cao</option>
-                                        <option value="@Url.Action("Index", "Products", new { sortOrder = "price_desc" })">Giá cao đến thấp</option>
+                                    <select onchange="location = this.value;" style="padding: 5px 10px; border: 1px solid #ebebeb; cursor: pointer;">
+                                        @* Mặc định *@
+                                        <option value="@Url.Action("Index", "Products", new { searchString = ViewBag.CurrentSearch, categoryGroup = ViewBag.CurrentCategoryGroup })"
+                                                @(string.IsNullOrEmpty(ViewBag.CurrentSort) ? "selected" : "")>
+                                            Mặc định
+                                        </option>
+
+                                        @* Giá thấp đến cao *@
+                                        <option value="@Url.Action("Index", "Products", new { sortOrder = "price_asc", searchString = ViewBag.CurrentSearch, categoryGroup = ViewBag.CurrentCategoryGroup })"
+                                                @(ViewBag.CurrentSort == "price_asc" ? "selected" : "")>
+                                            Giá thấp đến cao
+                                        </option>
+
+                                        @* Giá cao đến thấp *@
+                                        <option value="@Url.Action("Index", "Products", new { sortOrder = "price_desc", searchString = ViewBag.CurrentSearch, categoryGroup = ViewBag.CurrentCategoryGroup })"
+                                                @(ViewBag.CurrentSort == "price_desc" ? "selected" : "")>
+                                            Giá cao đến thấp
+                                        </option>
                                     </select>
                                 </div>
                             </div>

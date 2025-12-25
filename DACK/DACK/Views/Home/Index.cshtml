@@ -106,7 +106,7 @@
             </div>
             <div class="row product__filter">
 
-                @foreach (var item in Model)
+                @foreach (var item in Model.Take(28))
                 {
                     //var primaryImage = item.ProductImage?.FirstOrDefault(img => img.IsPrimary) ?? item.ProductImage?.FirstOrDefault();
                     <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
@@ -172,7 +172,7 @@
                 </div>
             </div>
             <div class="row product__filter">
-                @foreach (var item in Model.Take(6))
+                @foreach (var item in Model.Take(8))
                 {
                     //var primaryImage = item.ProductImage?.FirstOrDefault(img => img.IsPrimary) ?? item.ProductImage?.FirstOrDefault();
                     <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">

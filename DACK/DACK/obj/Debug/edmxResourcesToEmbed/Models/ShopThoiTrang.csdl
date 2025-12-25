@@ -16,6 +16,19 @@
     <NavigationProperty Name="Order" Relationship="Self.FK_Order_User" FromRole="AppUser" ToRole="Order" />
     <NavigationProperty Name="Role" Relationship="Self.UserRole" FromRole="AppUser" ToRole="Role" />
   </EntityType>
+  <EntityType Name="Blogs">
+    <Key>
+      <PropertyRef Name="BlogId" />
+    </Key>
+    <Property Name="BlogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ImageThumb" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ShortDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FullContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Author" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
   <EntityType Name="Cart">
     <Key>
       <PropertyRef Name="CartId" />
@@ -52,7 +65,6 @@
     <Property Name="IsActive" Type="Boolean" />
     <NavigationProperty Name="Product" Relationship="Self.FK__Product__Categor__5812160E" FromRole="Category" ToRole="Product" />
     <NavigationProperty Name="CategoryGroup" Relationship="Self.FK_Category_Group" FromRole="Category" ToRole="CategoryGroup" />
-    <NavigationProperty Name="Product1" Relationship="ShopThoiTrangModel.ProductCategory" FromRole="Category" ToRole="Product" />
   </EntityType>
   <EntityType Name="CategoryGroup">
     <Key>
@@ -73,6 +85,17 @@
     <Property Name="ColorHex" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="ColorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="ProductVariant" Relationship="Self.FK_Variant_Color" FromRole="Color" ToRole="ProductVariant" />
+  </EntityType>
+  <EntityType Name="ContactMessages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MessageText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+    <Property Name="IsRead" Type="Boolean" />
   </EntityType>
   <EntityType Name="CustomerAddress">
     <Key>
@@ -136,7 +159,6 @@
     <NavigationProperty Name="Category" Relationship="Self.FK__Product__Categor__5812160E" FromRole="Product" ToRole="Category" />
     <NavigationProperty Name="ProductImage" Relationship="Self.FK_ProductImage_Product" FromRole="Product" ToRole="ProductImage" />
     <NavigationProperty Name="ProductVariant" Relationship="Self.FK_Variant_Product" FromRole="Product" ToRole="ProductVariant" />
-    <NavigationProperty Name="Category1" Relationship="ShopThoiTrangModel.ProductCategory" FromRole="Product" ToRole="Category" />
   </EntityType>
   <EntityType Name="ProductImage">
     <Key>
@@ -156,9 +178,9 @@
     <Property Name="ReviewId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ReviewCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="OrderItemId" Type="Int32" Nullable="false" />
-    <Property Name="Rating" Type="Int32" Nullable="false" />
     <Property Name="Comment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Rating" Type="Int32" Nullable="false" />
     <NavigationProperty Name="OrderItem" Relationship="Self.FK_Review_OrderItem" FromRole="ProductReview" ToRole="OrderItem" />
   </EntityType>
   <EntityType Name="ProductVariant">
@@ -356,11 +378,13 @@
   </Association>
   <EntityContainer Name="ShopThoiTrangEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="AppUser" EntityType="Self.AppUser" />
+    <EntitySet Name="Blogs" EntityType="Self.Blogs" />
     <EntitySet Name="Cart" EntityType="Self.Cart" />
     <EntitySet Name="CartItem" EntityType="Self.CartItem" />
     <EntitySet Name="Category" EntityType="Self.Category" />
     <EntitySet Name="CategoryGroup" EntityType="Self.CategoryGroup" />
     <EntitySet Name="Color" EntityType="Self.Color" />
+    <EntitySet Name="ContactMessages" EntityType="Self.ContactMessages" />
     <EntitySet Name="CustomerAddress" EntityType="Self.CustomerAddress" />
     <EntitySet Name="Order" EntityType="Self.Order" />
     <EntitySet Name="OrderItem" EntityType="Self.OrderItem" />
@@ -426,39 +450,5 @@
       <End Role="Role" EntitySet="Role" />
       <End Role="AppUser" EntitySet="AppUser" />
     </AssociationSet>
-    <AssociationSet Name="ProductCategory" Association="ShopThoiTrangModel.ProductCategory">
-      <End Role="Category" EntitySet="Category" />
-      <End Role="Product" EntitySet="Product" />
-    </AssociationSet>
-    <EntitySet Name="ContactMessages" EntityType="ShopThoiTrangModel.ContactMessages" />
-    <EntitySet Name="Blogs" EntityType="ShopThoiTrangModel.Blogs" />
   </EntityContainer>
-  <Association Name="ProductCategory">
-    <End Type="ShopThoiTrangModel.Category" Role="Category" Multiplicity="*" />
-    <End Type="ShopThoiTrangModel.Product" Role="Product" Multiplicity="*" />
-  </Association>
-  <EntityType Name="ContactMessages">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="MessageText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedAt" Type="DateTime" Precision="3" />
-    <Property Name="IsRead" Type="Boolean" />
-  </EntityType>
-  <EntityType Name="Blogs">
-    <Key>
-      <PropertyRef Name="BlogId" />
-    </Key>
-    <Property Name="BlogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="ImageThumb" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-    <Property Name="ShortDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="FullContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Author" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedAt" Type="DateTime" Precision="3" />
-    <Property Name="IsActive" Type="Boolean" />
-  </EntityType>
 </Schema>

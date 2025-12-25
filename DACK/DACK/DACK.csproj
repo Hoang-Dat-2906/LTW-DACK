@@ -207,6 +207,11 @@
       <DependentUpon>ShopThoiTrang.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="about.html" />
@@ -272,12 +277,49 @@
     <Content Include="assets\img\logo.png" />
     <Content Include="assets\img\payment.png" />
     <Content Include="assets\img\product-sale.png" />
+    <Content Include="assets\img\product\ao-thun-1-1.jpg" />
+    <Content Include="assets\img\product\ao-thun-1-2.jpg" />
+    <Content Include="assets\img\product\ao-thun-1-3.jpg" />
+    <Content Include="assets\img\product\ao-thun-2-1.jpg" />
+    <Content Include="assets\img\product\ao-thun-2-2.jpg" />
+    <Content Include="assets\img\product\ao-thun-2-3.jpg" />
+    <Content Include="assets\img\product\ao-thun-3-1.jpg" />
+    <Content Include="assets\img\product\ao-thun-3-2.jpg" />
+    <Content Include="assets\img\product\ao-thun-3-3.jpg" />
     <Content Include="assets\img\product\ao-thun1.jpg" />
     <Content Include="assets\img\product\ao-thun2.jpg" />
     <Content Include="assets\img\product\ao-thun3.jpg" />
+    <Content Include="assets\img\product\balo-laptop-0.jpg" />
+    <Content Include="assets\img\product\balo-laptop-1.jpg" />
+    <Content Include="assets\img\product\balo-laptop-2.jpg" />
+    <Content Include="assets\img\product\balo-laptop-3.jpg" />
+    <Content Include="assets\img\product\balo-thoi-trang-0.jpg" />
+    <Content Include="assets\img\product\balo-thoi-trang-1.jpg" />
+    <Content Include="assets\img\product\balo-thoi-trang-2.jpg" />
+    <Content Include="assets\img\product\balo-thoi-trang-3.jpg" />
+    <Content Include="assets\img\product\giay-chay-bo-0.jpg" />
+    <Content Include="assets\img\product\giay-chay-bo-1.jpg" />
+    <Content Include="assets\img\product\giay-chay-bo-2.jpg" />
+    <Content Include="assets\img\product\giay-chay-bo-3.jpg" />
+    <Content Include="assets\img\product\giay-sneaker-0.jpg" />
+    <Content Include="assets\img\product\giay-sneaker-1.jpg" />
+    <Content Include="assets\img\product\giay-sneaker-2.jpg" />
+    <Content Include="assets\img\product\giay-sneaker-3.jpg" />
+    <Content Include="assets\img\product\khoac-7-1.jpg" />
+    <Content Include="assets\img\product\khoac-7-2.jpg" />
+    <Content Include="assets\img\product\khoac-7-3.jpg" />
+    <Content Include="assets\img\product\khoac-8-1.jpg" />
+    <Content Include="assets\img\product\khoac-8-2.jpg" />
+    <Content Include="assets\img\product\khoac-8-3.jpg" />
+    <Content Include="assets\img\product\khoac-9-1.jpg" />
+    <Content Include="assets\img\product\khoac-9-2.jpg" />
+    <Content Include="assets\img\product\khoac-9-3.jpg" />
     <Content Include="assets\img\product\khoac1.jpg" />
     <Content Include="assets\img\product\khoac2.jpg" />
     <Content Include="assets\img\product\khoac3.jpg" />
+    <Content Include="assets\img\product\non-10-1.jpg" />
+    <Content Include="assets\img\product\non-10-2.jpg" />
+    <Content Include="assets\img\product\non-10-3.jpg" />
     <Content Include="assets\img\product\non1.jpg" />
     <Content Include="assets\img\product\non2.jpg" />
     <Content Include="assets\img\product\non3.jpg" />
@@ -299,12 +341,31 @@
     <Content Include="assets\img\product\quan-dai2.jpg" />
     <Content Include="assets\img\product\quan-dai3.jpg" />
     <Content Include="assets\img\product\quan-short-desc1.jpg" />
+    <Content Include="assets\img\product\quan-short-desc2.jpg" />
+    <Content Include="assets\img\product\quan-short-desc3.jpg" />
     <Content Include="assets\img\product\quan-short1.jpg" />
     <Content Include="assets\img\product\quan-short2.jpg" />
     <Content Include="assets\img\product\quan-short3.jpg" />
+    <Content Include="assets\img\product\so-mi-4-1.jpg" />
+    <Content Include="assets\img\product\so-mi-4-2.jpg" />
+    <Content Include="assets\img\product\so-mi-4-3.jpg" />
+    <Content Include="assets\img\product\so-mi-5-1.jpg" />
+    <Content Include="assets\img\product\so-mi-5-2.jpg" />
+    <Content Include="assets\img\product\so-mi-5-3.jpg" />
+    <Content Include="assets\img\product\so-mi-6-1.jpg" />
+    <Content Include="assets\img\product\so-mi-6-2.jpg" />
+    <Content Include="assets\img\product\so-mi-6-3.jpg" />
     <Content Include="assets\img\product\so-mi1.jpg" />
     <Content Include="assets\img\product\so-mi2.jpg" />
     <Content Include="assets\img\product\so-mi3.jpg" />
+    <Content Include="assets\img\product\tui-deo-cheo-0.jpg" />
+    <Content Include="assets\img\product\tui-deo-cheo-1.jpg" />
+    <Content Include="assets\img\product\tui-deo-cheo-2.jpg" />
+    <Content Include="assets\img\product\tui-deo-cheo-3.jpg" />
+    <Content Include="assets\img\product\tui-deo-hong-0.jpg" />
+    <Content Include="assets\img\product\tui-deo-hong-1.jpg" />
+    <Content Include="assets\img\product\tui-deo-hong-2.jpg" />
+    <Content Include="assets\img\product\tui-deo-hong-3.jpg" />
     <Content Include="assets\img\product\vo1.jpg" />
     <Content Include="assets\img\product\vo2.jpg" />
     <Content Include="assets\img\product\vo3.jpg" />
@@ -413,6 +474,10 @@
     <Content Include="Models\ShopThoiTrang.edmx.diagram">
       <DependentUpon>ShopThoiTrang.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />

@@ -26,11 +26,13 @@ namespace DACK.Models
         }
     
         public virtual DbSet<AppUser> AppUser { get; set; }
+        public virtual DbSet<Blogs> Blogs { get; set; }
         public virtual DbSet<Cart> Cart { get; set; }
         public virtual DbSet<CartItem> CartItem { get; set; }
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<CategoryGroup> CategoryGroup { get; set; }
         public virtual DbSet<Color> Color { get; set; }
+        public virtual DbSet<ContactMessages> ContactMessages { get; set; }
         public virtual DbSet<CustomerAddress> CustomerAddress { get; set; }
         public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<OrderItem> OrderItem { get; set; }
@@ -40,7 +42,5 @@ namespace DACK.Models
         public virtual DbSet<ProductVariant> ProductVariant { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Size> Size { get; set; }
-        public virtual DbSet<ContactMessages> ContactMessages { get; set; }
-        public virtual DbSet<Blogs> Blogs { get; set; }
     }
 }

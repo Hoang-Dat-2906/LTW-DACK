@@ -19,7 +19,6 @@ namespace DACK.Models
         {
             this.ProductImage = new HashSet<ProductImage>();
             this.ProductVariant = new HashSet<ProductVariant>();
-            this.Category1 = new HashSet<Category>();
         }
     
         public int ProductId { get; set; }
@@ -37,7 +36,5 @@ namespace DACK.Models
         public virtual ICollection<ProductImage> ProductImage { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductVariant> ProductVariant { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Category> Category1 { get; set; }
     }
 }

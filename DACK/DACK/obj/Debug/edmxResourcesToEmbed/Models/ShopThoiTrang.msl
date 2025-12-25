@@ -14,6 +14,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Blogs">
+      <EntityTypeMapping TypeName="ShopThoiTrangModel.Blogs">
+        <MappingFragment StoreEntitySet="Blogs">
+          <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ImageThumb" ColumnName="ImageThumb" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="FullContent" ColumnName="FullContent" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Cart">
       <EntityTypeMapping TypeName="ShopThoiTrangModel.Cart">
         <MappingFragment StoreEntitySet="Cart">
@@ -65,6 +79,18 @@
           <ScalarProperty Name="ColorId" ColumnName="ColorId" />
           <ScalarProperty Name="ColorHex" ColumnName="ColorHex" />
           <ScalarProperty Name="ColorName" ColumnName="ColorName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactMessages">
+      <EntityTypeMapping TypeName="ShopThoiTrangModel.ContactMessages">
+        <MappingFragment StoreEntitySet="ContactMessages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MessageText" ColumnName="MessageText" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -144,9 +170,9 @@
           <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
           <ScalarProperty Name="ReviewCode" ColumnName="ReviewCode" />
           <ScalarProperty Name="OrderItemId" ColumnName="OrderItemId" />
-          <ScalarProperty Name="Rating" ColumnName="Rating" />
           <ScalarProperty Name="Comment" ColumnName="Comment" />
           <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -188,39 +214,5 @@
         <ScalarProperty Name="UserId" ColumnName="UserId" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="ProductCategory" TypeName="ShopThoiTrangModel.ProductCategory" StoreEntitySet="ProductCategory">
-      <EndProperty Name="Product">
-        <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-      </EndProperty>
-      <EndProperty Name="Category">
-        <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <EntitySetMapping Name="ContactMessages">
-      <EntityTypeMapping TypeName="ShopThoiTrangModel.ContactMessages">
-        <MappingFragment StoreEntitySet="ContactMessages">
-          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
-          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
-          <ScalarProperty Name="MessageText" ColumnName="MessageText" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Blogs">
-      <EntityTypeMapping TypeName="ShopThoiTrangModel.Blogs">
-        <MappingFragment StoreEntitySet="Blogs">
-          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
-          <ScalarProperty Name="Author" ColumnName="Author" />
-          <ScalarProperty Name="FullContent" ColumnName="FullContent" />
-          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
-          <ScalarProperty Name="ImageThumb" ColumnName="ImageThumb" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="BlogId" ColumnName="BlogId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -17,9 +17,9 @@ namespace DACK.Models
         public int ReviewId { get; set; }
         public string ReviewCode { get; set; }
         public int OrderItemId { get; set; }
-        public int Rating { get; set; }
         public string Comment { get; set; }
         public System.DateTime CreatedAt { get; set; }
+        public int Rating { get; set; }
     
         public virtual OrderItem OrderItem { get; set; }
     }

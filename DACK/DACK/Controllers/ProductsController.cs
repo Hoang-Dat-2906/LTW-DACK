@@ -14,24 +14,53 @@ namespace DACK.Controllers
 {
     public class ProductsController : Controller
     {
-        private ShopThoiTrangEntities1 db = new ShopThoiTrangEntities1();
+        private ShopThoiTrangEntities1 db = new ShopThoiTrangEntities1 ();
 
-        public ActionResult Index(string searchString, int? categoryId, string categoryGroup)
+        public ActionResult Index(string searchString, string categoryGroup, string sortOrder)
         {
+            // 1. Khởi tạo Query an toàn (tránh lỗi .Value bằng cách so sánh trực tiếp)
             var products = db.Product.Include(p => p.ProductImage).Where(p => p.IsActive == true);
 
+            // 2. Lọc theo nhóm CategoryGroup
             if (categoryGroup == "ao")
             {
-                products = products.Where(p => p.CategoryId == 1 || p.CategoryId == 2 || p.CategoryId == 3);
+                var aoIds = new List<int?> { 1, 2, 3 };
+                products = products.Where(p => aoIds.Contains(p.CategoryId));
             }
-            else if (categoryId.HasValue)
+            else if (categoryGroup == "quan")
             {
-                products = products.Where(p => p.CategoryId == categoryId.Value);
+                var quanIds = new List<int?> { 6,7 };
+                products = products.Where(p => quanIds.Contains(p.CategoryId));
             }
+            else if (categoryGroup == "phu-kien")
+            {
+                var phuKienIds = new List<int?> { 4, 5, 8, 9, 10 };
+                products = products.Where(p => phuKienIds.Contains(p.CategoryId));
+            }
+
+            // 3. Tìm kiếm theo tên
             if (!string.IsNullOrEmpty(searchString))
             {
                 products = products.Where(p => p.ProductName.Contains(searchString));
             }
+
+            // 4. Sắp xếp (Sort)
+            switch (sortOrder)
+            {
+                case "price_asc":
+                    products = products.OrderBy(p => p.BasePrice);
+                    break;
+                case "price_desc":
+                    products = products.OrderByDescending(p => p.BasePrice);
+                    break;
+                default:
+                    products = products.OrderByDescending(p => p.CreatedAt);
+                    break;
+            }
+
+            // 5. Gán lại dữ liệu cho ViewBag
+            ViewBag.CurrentSearch = searchString;
+            ViewBag.CurrentCategoryGroup = categoryGroup;
 
             return View(products.ToList());
         }
